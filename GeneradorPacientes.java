@@ -3,8 +3,8 @@ import java.io.*;
 import java.util.*;
 
 public class GeneradorPacientes {
-    private static final String[] NOMBRES = {"Ana", "Luis", "Pedro", "Josefa", "Carlos", "Camila"};
-    private static final String[] APELLIDOS = {"Gomez", "Perez", "Rodriguez", "Diaz", "Morales", "Soto"};
+    private static final String[] NOMBRES = {"Ana", "Luis", "Pedro", "Josefa", "Carlos", "Camila", "Makoto", "Matias", "Nero", "Dante", "Tomás", "Teresa", "Juan", "Daniela", "Elena", "Martín", "Andrés", "Paula", "Rosario", "Javier", "Matías", "Valentina", "Laura", "Sebastián", "Bruno", "Lucía", "Renata", "Gabriel", "Felipe", "Antonia", "Agustina", "Nicolás", "Sofía", "Benjamín", "Simón", "Emilia", "Francisca", "Samuel", "Ignacio", "Isidora", "Catalina", "Joaquín"};
+    private static final String[] APELLIDOS = {"Rojas", "Pérez", "Gómez", "Fernández", "Muñoz", "Silva", "Castillo", "Soto", "Vega", "Reyes", "Morales", "Fuentes", "Gutiérrez", "Cortés", "Carrasco", "Ortega", "Campos", "Araya", "Espinoza", "Navarro", "Contreras", "Romero", "Herrera", "Salazar", "Torres", "Loyola", "Paredes", "Godoy", "Vergara", "Bravo", "Tapia", "Figueroa", "Valenzuela", "Zúñiga", "Medina", "Sepúlveda", "Toledo", "Valdés", "Alarcón", "Cáceres"};
     private static final String[] AREAS = {"SAPU", "urgencia_adulto", "infantil"};
     private static Random rand = new Random();
 
