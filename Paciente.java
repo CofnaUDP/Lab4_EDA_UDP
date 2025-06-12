@@ -17,7 +17,7 @@ public class Paciente implements Comparable<Paciente> {
         this.id = id;
         this.categoria = categoria;
         this.tiempoLlegada = tiempoLlegada;
-        this.estado = "en_espera";
+        this.estado = "No atendido";
         this.area = area;
         this.historialCambios = new Stack<>();
     }
@@ -33,7 +33,7 @@ public class Paciente implements Comparable<Paciente> {
     public String obtenerUltimoCambio() {
         return historialCambios.isEmpty() ? "Sin cambios" : historialCambios.pop();
     }
-    
+
     public String getNombre() {return nombre;}
     public String getApellido() {return apellido;}
     public int getCategoria() { return categoria; }
@@ -55,3 +55,4 @@ public class Paciente implements Comparable<Paciente> {
         return id + " | " + nombre + " " + apellido + " | C" + categoria + " | " + area + " | " + estado;
     }
 }
+
