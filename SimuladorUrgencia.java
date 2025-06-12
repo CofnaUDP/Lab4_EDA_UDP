@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class SimuladorUrgencia {
@@ -9,13 +8,14 @@ public class SimuladorUrgencia {
     private List<Paciente> pacientesFueraDeTiempo = new ArrayList<>();
     private int contadorIngresos = 0;
     private int pacientesTotales;
+    private int pacientesAtendidos = 0;
 
     private final Map<Integer, Integer> tiempoMaximoCategoria = Map.of(
-        1, 0,
-        2, 30,
-        3, 90,
-        4, 180,
-        5, Integer.MAX_VALUE
+            1, 0,
+            2, 30,
+            3, 90,
+            4, 180,
+            5, Integer.MAX_VALUE
     );
 
     public SimuladorUrgencia(List<Paciente> pacientes) {
@@ -56,6 +56,8 @@ public class SimuladorUrgencia {
         if (p != null) {
             long espera = (System.currentTimeMillis() / 1000 - p.getTiempoLlegada()) / 60;
             int cat = p.getCategoria();
+            p.setEstado("Atendido");
+            pacientesAtendidos++;
 
             atendidosPorCategoria.put(cat, atendidosPorCategoria.getOrDefault(cat, 0) + 1);
             acumuladorEspera.put(cat, acumuladorEspera.getOrDefault(cat, 0L) + espera);
@@ -65,7 +67,6 @@ public class SimuladorUrgencia {
             }
         }
     }
-
     private void mostrarResumen() {
         System.out.println("===== RESUMEN DE SIMULACIÓN =====");
         int totalAtendidos = hospital.getPacientesAtendidos().size();
