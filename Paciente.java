@@ -33,7 +33,9 @@ public class Paciente implements Comparable<Paciente> {
     public String obtenerUltimoCambio() {
         return historialCambios.isEmpty() ? "Sin cambios" : historialCambios.pop();
     }
-
+    
+    public String getNombre() {return nombre;}
+    public String getApellido() {return apellido;}
     public int getCategoria() { return categoria; }
     public void setCategoria(int nuevaCategoria) { this.categoria = nuevaCategoria; }
     public String getId() { return id; }
